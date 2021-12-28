@@ -1,0 +1,43 @@
+@use "../../scss/variables" as var;
+@import "../../scss/mixins";
+
+:host {
+    position: relative;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+
+    input[type="checkbox"] {
+        position: absolute;
+        opacity: 100%;
+        width: 0;
+        height: 0;
+    }
+
+    label {
+        // display: block;
+        @include flex;
+        @include flex-center;
+
+        height: 100%;
+        width: 100%;
+
+        transition: 0.1s;
+
+        background-color: var.$secondary-contrast;
+
+        text-align: center;
+        font-size: 3rem;
+        color: var.$secondary-contrast;
+    }
+
+    input[type="checkbox"]:checked {
+        + label {
+            color: var.$contrast-dark;
+        }
+    }
+
+    label:hover {
+        background-color: var.$contrast-light;
+        color: white;
+    }
+}

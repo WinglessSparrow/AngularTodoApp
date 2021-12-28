@@ -1,0 +1,8 @@
+
+<input type="text" style="textarea-switchable" [(ngModel)]="name" (blur)="changeName()"/>
+<button class="delete-button" [class.delete-on]="mode" (click)="deleteTask()">
+    <i class="fas fa-times"></i>
+</button>
+<button class="toggle-button" [class.on]="mode" (click)="switchMode()">
+    <i class="fas fa-pencil"></i>
+</button>

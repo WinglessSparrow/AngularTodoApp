@@ -1,0 +1,53 @@
+@use "../../scss/variables" as var;
+@import "../../scss/mixins";
+
+:host {
+    @include flex($direction: row);
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 10px;
+
+    height: 10%;
+
+    background-color: var.$contrast;
+
+    margin-bottom: 5px;
+    margin-top: 5px;
+
+    color: white;
+
+    textarea {
+        @include textarea-switching;
+    }
+
+    input[type="checkbox"] {
+        opacity: 100%;
+        width: 0;
+        height: 0;
+    }
+
+    label {
+        height: 100%;
+        aspect-ratio: 1 / 1;
+
+        background-color: var.$secondary-contrast;
+    }
+
+    button {
+        height: 100%;
+        aspect-ratio: 1 / 1;
+        background-color: red;
+        font-size: 3rem;
+        color: white;
+        border: 0;
+        outline: 0;
+        text-align: center;
+    }
+
+    .index {
+        width: 3rem;
+        text-align: center;
+        border-right: solid 1px var.$primary-color;
+    }
+}

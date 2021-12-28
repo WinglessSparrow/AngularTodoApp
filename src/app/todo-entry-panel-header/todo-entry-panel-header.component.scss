@@ -1,0 +1,77 @@
+@use "../../scss/variables" as var;
+@import "../../scss/mixins";
+
+:host {
+    position: relative;
+    @include flex($direction: row);
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding-left: 10%;
+    text-align: center;
+
+    box-shadow: var.$secondary-shadow 0 2px 6px 2px;
+    border-bottom: solid 2px var.$contrast;
+
+    .toggle-button {
+        height: 100%;
+        aspect-ratio: 1 / 1;
+        font-size: 4rem;
+        @include primary-button();
+    }
+
+    .on {
+        background-color: var.$contrast-dark;
+    }
+
+    .delete-button {
+        position: absolute;
+        top: 0;
+        opacity: 0;
+
+        right: 0;
+        pointer-events: none;
+
+        transition: 0.5s;
+
+        height: 100%;
+        aspect-ratio: 1 / 1;
+
+        background-color: red;
+        color: white;
+        font-size: 5rem;
+
+        border: 0;
+        outline: 0;
+
+        &:hover {
+            background-color: rgb(255, 87, 87);
+        }
+
+        &:active {
+            transition: 0;
+            background-color: red;
+        }
+    }
+
+    .delete-on {
+        opacity: 1;
+        pointer-events: all;
+
+        transform: translateX(-100%);
+    }
+
+    p {
+        font-size: 2rem;
+    }
+
+    input {
+        @include textarea-switching;
+        background-color: transparent;
+        font-size: 2rem;
+        color: Black;
+        border-top-left-radius: 1rem;
+        border-bottom-left-radius: 1rem;
+    }
+}

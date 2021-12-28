@@ -1,0 +1,14 @@
+
+<div class="header">
+    <app-header></app-header>
+</div>
+<div class="content">
+    <tasks-panel (eventTaskChosen)="setChosenTask($event)" (newTask)="triggerAnimation()"></tasks-panel>
+    <div class="todo-entry-panel-wrapper">
+        <todo-entry-panel @slideIn *ngIf="chosenTask != undefined" [task]="this.chosenTask" (taskDeleted)="closePanel()"></todo-entry-panel> 
+        <div class="icon-wrapper">
+            <i class="fas fa-clipboard-list"></i>
+        </div>
+    </div>
+</div>
+

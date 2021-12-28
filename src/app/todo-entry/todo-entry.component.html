@@ -1,0 +1,6 @@
+<h2 class="index">{{nr}}</h2>
+<textarea resize="false" [ngModel]="todoEntry.text" (ngModelChange)="changeText($event)" (blur)="changeValue(todoEntry.isDone)"></textarea>
+<custom-checkbox *ngIf="!deleting; else deletion" [value]="todoEntry.isDone" (valueChange)="changeValue($event)" [uId]="uId"></custom-checkbox>
+<ng-template #deletion>
+    <custom-button (click)="deleteEntry()"></custom-button>
+</ng-template>

@@ -1,0 +1,21 @@
+@import "../../scss/mixins";
+
+:host {
+    height: 100%;
+    aspect-ratio: 1 / 1;
+
+    @include flex;
+    @include flex-center;
+
+    background-color: red;
+
+    font-size: 3rem;
+}
+
+:host:hover {
+    background-color: rgb(255, 87, 87);
+}
+
+:host:active {
+    background-color: red;
+}

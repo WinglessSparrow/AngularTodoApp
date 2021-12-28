@@ -1,0 +1,7 @@
+
+<todo-entry-panel-header [name]="task.name" (nameChange)="modifyTask($event)" [(mode)]="this.modeChange" (onDeleteButton)="deleteTask()"></todo-entry-panel-header>
+<div class="scroll" *ngIf="task != undefined">
+    <todo-entry *ngFor="let entry of task.entries; let index = index" [todoEntry]="task.entries[index]" (todoEntryChange)="entryChanged($event)" [nr]="index" [deleting]="this.modeChange"></todo-entry>
+    <button class="add-button" (click)="addEntry()"><i class="fa fa-plus" aria-hidden="true"></i></button>
+</div>
+

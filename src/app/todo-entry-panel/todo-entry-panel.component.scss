@@ -1,0 +1,53 @@
+@use "sass:math";
+@use "../../scss/variables" as var;
+@import "../../scss/mixins";
+
+:host {
+    z-index: 1;
+
+    border-top-left-radius: 5rem;
+
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 5rem auto;
+
+    width: 100%;
+    height: 100%;
+
+    @include secondary-background;
+}
+
+.scroll {
+    flex: 1;
+    @include flex();
+    align-items: center;
+
+    todo-entry {
+        width: 100%;
+    }
+
+    button {
+        flex-shrink: 0;
+    }
+
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.icon-wrapper {
+    @include flex();
+    @include flex-center();
+    text-align: center;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    z-index: 0;
+
+    width: 100%;
+    height: 100%;
+    .icon {
+        font-size: 10rem;
+    }
+}
