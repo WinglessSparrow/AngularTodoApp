@@ -2,19 +2,23 @@
 @import "../../scss/mixins";
 
 :host {
-    grid-row: 3 / 4;
-    grid-column: 2 / 3;
+    // grid-row: 2 / 3;
+    // grid-column: 2 / 3;
+    grid-area: tasks;
 
     border-radius: 3rem;
 
     overflow: hidden;
 
     @include secondary-background;
+
+    margin-bottom: 5%;
 }
 
 .scroll {
     @include flex;
     align-items: center;
+    flex-shrink: 0;
 
     height: 100%;
 

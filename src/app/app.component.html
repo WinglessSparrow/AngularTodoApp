@@ -1,8 +1,6 @@
 
-<div class="header">
-    <app-header></app-header>
-</div>
 <div class="content">
+    <app-header></app-header>
     <tasks-panel (eventTaskChosen)="setChosenTask($event)" (newTask)="triggerAnimation()"></tasks-panel>
     <div class="todo-entry-panel-wrapper">
         <todo-entry-panel @slideIn *ngIf="chosenTask != undefined" [task]="this.chosenTask" (taskDeleted)="closePanel()"></todo-entry-panel> 

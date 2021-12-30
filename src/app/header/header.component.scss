@@ -1,11 +1,24 @@
 @use "../../scss/variables" as var;
 
+:host {
+    grid-area: header;
+
+    // grid-row: 0 / 1;
+    // grid-column: 1 / -1;
+}
+
 .header {
     width: 70%;
     height: 100%;
     border-bottom-right-radius: 200px;
     background-color: var.$secondary-color;
     box-shadow: var.$secondary-shadow 0px 0px 20px 5px;
+
+    @media (max-width: var.$phone) {
+        width: 100%;
+        border-radius: 0;
+        padding-bottom: 20px;
+    }
 }
 
 h2 {
