@@ -14,18 +14,16 @@ import { TaskState } from 'src/shared/state/task.state';
     trigger('slideIn', [
       transition(':enter', [
         style({ transform: 'translateX(100%)' }),
-        animate('200ms', style({ transform: 'translateY(0%)' })),
+        animate('200ms', style({ transform: 'translateX(0%)' })),
       ]),
       transition(':leave', [
-        style({ transform: 'translateX(0%)' }),
+        style({ transform: 'translateY(0%)' }),
         animate('200ms', style({ transform: 'translateY(100%)' })),
       ]),
     ]),
   ],
 })
 export class AppComponent {
-  @Select(TaskState.getTasks) tasks$!: Observable<Task[]>;
-
   chosenTask: Task | undefined;
 
   constructor(private store: Store) {
@@ -70,7 +68,6 @@ export class AppComponent {
 
   setChosenTask(task: Task) {
     this.chosenTask = task;
-    this.triggerAnimation();
   }
 
   triggerAnimation() {
