@@ -1,9 +1,11 @@
 import { animate, style, transition, trigger } from '@angular/animations';
 import { Component } from '@angular/core';
-import { Store } from '@ngxs/store';
+import { Select, Store } from '@ngxs/store';
+import { Observable } from 'rxjs';
 import { Task } from 'src/classes/Task';
 import { TodoEntry } from 'src/classes/TodoEntry';
 import { AddMultipleTask } from 'src/shared/actions/task.action';
+import { TaskState } from 'src/shared/state/task.state';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -22,6 +24,8 @@ import { AddMultipleTask } from 'src/shared/actions/task.action';
   ],
 })
 export class AppComponent {
+  @Select(TaskState.getTasks) tasks$!: Observable<Task[]>;
+
   chosenTask: Task | undefined;
 
   constructor(private store: Store) {
@@ -66,6 +70,7 @@ export class AppComponent {
 
   setChosenTask(task: Task) {
     this.chosenTask = task;
+    this.triggerAnimation();
   }
 
   triggerAnimation() {

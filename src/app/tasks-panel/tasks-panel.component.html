@@ -1,4 +1,4 @@
 <div class="scroll">
-        <task-entry *ngFor="let t of tasks$ | async" [task]="t" (click)="chooseTask(t)"></task-entry>
+        <task-entry *ngFor="let t of tasks" [task]="t" (click)="chooseTask(t)"></task-entry>
         <button class="add-button" (click)="addTask()"><i class="fas fa-plus"></i></button>
 </div>
