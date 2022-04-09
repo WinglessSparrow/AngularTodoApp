@@ -1,11 +1,5 @@
 import { Injectable } from '@angular/core';
-import {
-  Action,
-  createSelector,
-  Selector,
-  State,
-  StateContext,
-} from '@ngxs/store';
+import { Action, Selector, State, StateContext } from '@ngxs/store';
 import { produce } from 'immer';
 import { Task } from '../../classes/Task';
 import {
